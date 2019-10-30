@@ -111,6 +111,8 @@ sap.ui.define([
 
 			var oModel2 = new JSONModel(oDetails);
 			this.getView().setModel(oModel2);
+			
+			//Changes made for testing
 
 		},
 		onObjectItemPress: function (oEvent) {
