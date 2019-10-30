@@ -1,0 +1,112 @@
+<mvc:View controllerName="masterdetail.masterdetail.controller.View1" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" displayBlock="true" xmlns:f="sap.ui.layout.form"
+ xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<SplitApp id="splitapp" masterButtonText="Master">
+							<masterPages>
+								<Page id="masterpageid" title="List" titleLevel="Auto">
+									<content>
+										<List id="emplist" items="{/details}">
+											<items>
+												<StandardListItem press="onObjectItemPress" title="{text}({key})" type="Active"></StandardListItem>
+											</items>
+											<headerToolbar>
+												<Toolbar>
+													<content>
+														<Title text="Employees" title="Search"></Title>
+														<ToolbarSpacer/>
+													
+													</content>
+												</Toolbar>
+											</headerToolbar>
+										</List>
+									</content>
+								</Page>
+							</masterPages>
+							<detailPages>
+								<!--<Page id="pg1" title="Hello UI5">
+									<Label text="Chose any use for more details."></Label>
+								</Page>-->
+								<Page id="detailpageid" title="Employee Project Data" titleLevel="Auto" showNavButton="true" navButtonText="Main Page"
+									navButtonPress="onPressDetailBack">
+									<content>
+										<IconTabBar id="idIconTabBarMulti">
+											<items>
+												<IconTabFilter text="User Data" icon="sap-icon://hint">
+													<Table id="tbData" items="{data}">
+														<columns>
+															<Column id="clmaa">
+																<Text text="Serial Number"/>
+															</Column>
+															<Column id="clmab">
+																<Text text="First Name"/>
+															</Column>
+															<Column id="clmac">
+																<Text text="Last Name"/>
+															</Column>
+															<Column id="clmad">
+																<Text text="Contact"/>
+															</Column>
+															<Column id="clmae">
+																<Text text="Address"/>
+															</Column>
+															<Column id="clmaf">
+																<Text text="City"/>
+															</Column>
+															<Column id="clmag">
+																<Text text="Qualification"/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem>
+																<Text id="txa" text="{sno}"/>
+																<Text id="txb" text="{fname}"/>
+																<Text id="txc" text="{sname}"/>
+																<Text id="txd" text="{contact}"/>
+																<Text id="txe" text="{address}"/>
+																<Text id="txf" text="{city}"/>
+																<Text id="txg" text="{quali}"/>
+															</ColumnListItem>
+														</items>
+													</Table>
+											
+												</IconTabFilter>
+												<IconTabFilter text="Master Data" icon="sap-icon://attachment">
+													<Table id="tbData2" items="{/details}">
+														<columns>
+															<Column id="clma1">
+																<Text text="Employee Number"/>
+															</Column>
+															<Column id="clma2">
+																<Text text="First Name"/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem>
+																<Text id="tx1" text="{key}"/>
+																<Text id="tx2" text="{text}"/>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</IconTabFilter>
+												<IconTabFilter text="Image Hover" icon="sap-icon://locked">
+													</IconTabFilter>
+											</items>
+										</IconTabBar>
+									</content>
+								</Page>
+								<Page id="pg2" title="Main Page" showNavButton="true" navButtonText="Go to detail page." navButtonPress="onPressDetailBack">
+									<Label text="Hello UI5 "></Label>
+								</Page>
+							</detailPages>
+						</SplitApp>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
